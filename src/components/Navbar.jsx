@@ -16,6 +16,7 @@ export default function Navbar() {
     { label: "About Us", href: "/about" },
     { label: "Committee", href: "/committee" },
     { label: "Events & Hackathons", href: "/events" },
+    { label: "Academic Calendar", href: "/calendar" },
     { label: "Membership", href: "/membership" },
     { label: "Achievements", href: "/achievements" },
     { label: "Member Vault", href: "/dashboard" },
@@ -56,6 +57,22 @@ export default function Navbar() {
             
             {/* Tier 1: Micro Utility Row */}
             <div className="flex items-center justify-end gap-2 text-[11px] 2xl:text-[11.5px] text-slate-600 font-medium pb-1.5 border-b border-slate-100 w-full whitespace-nowrap">
+              <a
+                href="mailto:acmstudentchapter@indiraicem.ac.in"
+                className="hover:text-[#003c84] transition"
+              >
+                <b>acmstudentchapter</b>@indiraicem.ac.in
+              </a>
+              <span className="text-slate-300">|</span>
+              <a
+                href="https://www.instagram.com/icem_acm?utm_source=qr&stkn=MWUxZTY0eWVjN3VtNg=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-pink-600 transition flex items-center gap-1 font-semibold text-[#003c84]"
+              >
+                <span>@icem_acm</span>
+              </a>
+              <span className="text-slate-300">|</span>
               <a
                 href="https://indiraicem.ac.in/programs/ai-ds/"
                 target="_blank"
