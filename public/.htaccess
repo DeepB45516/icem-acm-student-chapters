@@ -2,9 +2,18 @@
   RewriteEngine On
   RewriteBase /icem-acm/
 
-  # Map RSC prefetch requests for root
-  RewriteRule ^icem-acm\.txt$ index.txt [L,QSA]
-  RewriteRule ^index\.txt$ index.txt [L,QSA]
+  # Custom 404 within chapter subfolder
+  ErrorDocument 404 /icem-acm/404.html
+
+  # Map RSC prefetch requests for Next.js App Router (*.txt -> */index.txt)
+  RewriteRule ^(icem-acm|index)\.txt$ index.txt [L,QSA]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^([^.]+)\.txt$ $1/index.txt [L,QSA]
+
+  # Ensure directory requests have trailing slash so relative paths & Apache don't escape /icem-acm/
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteRule ^(.*)$ /icem-acm/$1/ [R=301,L]
 
   # Serve existing files and directories directly
   RewriteCond %{REQUEST_FILENAME} -f [OR]

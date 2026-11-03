@@ -19,6 +19,8 @@ with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zipf:
             zinfo.external_attr = 0o755 << 16 | 0x10
             zipf.writestr(zinfo, b"")
         for file in files:
+            if file.endswith(".zip"):
+                continue
             file_path = os.path.join(root, file)
             rel_path = os.path.relpath(file_path, out_dir).replace("\\", "/")
             zinfo = zipfile.ZipInfo(rel_path, now)
