@@ -182,14 +182,14 @@ const officersList = [
     initials: "AT",
   },
   {
-    name: "Biswas Deep",
-    role: "Web - Master",
+    name: "Deep Biswas",
+    role: "Webmaster",
     badge: "Technical Leadership",
     type: "tech",
     dept: "T.E. AI & Data Science · Class of 2027",
     desc: "Architecting official chapter web portals, authentication systems, cloud servers, certificate verifiers, and GitHub organization pipelines.",
-    email: "biswas.deep@indiraicem.ac.in",
-    initials: "BD",
+    email: "deep.biswas@indiraicem.ac.in",
+    initials: "DB",
   },
   {
     name: "Shridhar Kumbhar",

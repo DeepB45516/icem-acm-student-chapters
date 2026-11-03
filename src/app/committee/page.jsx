@@ -50,7 +50,7 @@ export default function CommitteePage() {
             { name: "Parth Sawant", role: "Chairperson", code: "PS", desc: "Leads chapter vision, executive operations, and technical symposiums." },
             { name: "Samruddhi Morde", role: "Vice Chair", code: "SM", desc: "Coordinates day-to-day initiatives, outreach, and event scheduling." },
             { name: "Aaditya Topare", role: "Secretary", code: "AT", desc: "Manages official communications, proceedings, and chapter records." },
-            { name: "Biswas Deep", role: "Web-Master", code: "BD", desc: "Directs web portals, registration systems, and technical repositories." },
+            { name: "Deep Biswas", role: "Webmaster", code: "DB", desc: "Directs web development, registration portals, GitHub repositories, and tech infrastructure." },
             { name: "Shridhar Kumbhar", role: "Treasurer", code: "SK", desc: "Manages chapter budgeting, ledger accounts, and hackathon prize funds." },
             { name: "Khushi Umathe", role: "Membership Chair", code: "KU", desc: "Spearheads student onboarding, relations, and cohort engagement." },
           ].map((m, idx) => (

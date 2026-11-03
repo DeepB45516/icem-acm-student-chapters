@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Calendar, Clock, MapPin, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
+import { Calendar, Clock, MapPin, CheckCircle2, CalendarDays } from "lucide-react";
 
 const allEvents = [
   {
@@ -81,25 +82,34 @@ export default function EventsPage() {
           <h1 className="text-2xl font-bold text-[#003c84]">Chapter Activities &amp; Sprints</h1>
           <p className="text-xs text-slate-500">Upcoming hackathons, hands-on bootcamps, and past archives</p>
         </div>
-        <div className="flex gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold">
-          <button
-            onClick={() => setFilter("all")}
-            className={`px-3 py-1.5 rounded-md transition ${filter === "all" ? "bg-white text-[#003c84] shadow-xs" : "text-slate-600"}`}
+        <div className="flex flex-wrap items-center gap-2">
+          <Link
+            href="/calendar"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-bold text-[#003c84] hover:bg-slate-50 transition"
           >
-            All ({allEvents.length})
-          </button>
-          <button
-            onClick={() => setFilter("upcoming")}
-            className={`px-3 py-1.5 rounded-md transition ${filter === "upcoming" ? "bg-white text-[#003c84] shadow-xs" : "text-slate-600"}`}
-          >
-            Upcoming
-          </button>
-          <button
-            onClick={() => setFilter("completed")}
-            className={`px-3 py-1.5 rounded-md transition ${filter === "completed" ? "bg-white text-[#003c84] shadow-xs" : "text-slate-600"}`}
-          >
-            Completed
-          </button>
+            <CalendarDays className="w-3.5 h-3.5 text-[#278da4]" />
+            <span>Academic Calendar ↗</span>
+          </Link>
+          <div className="flex gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold">
+            <button
+              onClick={() => setFilter("all")}
+              className={`px-3 py-1.5 rounded-md transition ${filter === "all" ? "bg-white text-[#003c84] shadow-xs" : "text-slate-600"}`}
+            >
+              All ({allEvents.length})
+            </button>
+            <button
+              onClick={() => setFilter("upcoming")}
+              className={`px-3 py-1.5 rounded-md transition ${filter === "upcoming" ? "bg-white text-[#003c84] shadow-xs" : "text-slate-600"}`}
+            >
+              Upcoming
+            </button>
+            <button
+              onClick={() => setFilter("completed")}
+              className={`px-3 py-1.5 rounded-md transition ${filter === "completed" ? "bg-white text-[#003c84] shadow-xs" : "text-slate-600"}`}
+            >
+              Completed
+            </button>
+          </div>
         </div>
       </div>
 

@@ -40,6 +40,7 @@ export default function Footer() {
             <ul className="space-y-2 text-xs">
               <li><Link href="/about" className="hover:text-[#278da4] transition">About Us</Link></li>
               <li><Link href="/events" className="hover:text-[#278da4] transition">Upcoming Events</Link></li>
+              <li><Link href="/calendar" className="hover:text-[#278da4] transition">Academic Calendar</Link></li>
               <li><Link href="/achievements" className="hover:text-[#278da4] transition">Achievements</Link></li>
               <li><Link href="/committee" className="hover:text-[#278da4] transition">Executive Team</Link></li>
               <li><Link href="/dashboard" className="hover:text-[#278da4] transition">Member Vault &amp; MoM</Link></li>
@@ -98,18 +99,34 @@ export default function Footer() {
             <ul className="space-y-2 text-xs text-slate-600">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#278da4] flex-shrink-0 mt-0.5" />
-                <span>Dept. of AI &amp; Data Science, 3rd Floor, ICEM Pune Campus, Parandwadi, Pune - 410507</span>
+                <span>Dept. of AI &amp; Data Science, 4th Floor, ICEM Pune Campus, Parandwadi, Pune - 410506</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#278da4] flex-shrink-0" />
-                <a href="mailto:acm.chapter@icem.ac.in" className="hover:text-[#278da4] transition">
-                  acm.chapter@icem.ac.in
+                <a href="mailto:acmstudentchapter@indiraicem.ac.in" className="hover:text-[#278da4] transition">
+                  acmstudentchapter@indiraicem.ac.in
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#278da4] flex-shrink-0" />
-                <a href="tel:+919876543210" className="hover:text-[#278da4] transition">
-                  +91 98765 43210
+                <div className="space-x-2">
+                  <a href="tel:+919881383933" className="hover:text-[#278da4] transition">
+                    +91 98813 83933
+                  </a>
+                  <span className="text-slate-300">|</span>
+                  <a href="tel:+917700024760" className="hover:text-[#278da4] transition">
+                    +91 7700 024 760
+                  </a>
+                </div>
+              </li>
+              <li className="pt-1">
+                <a
+                  href="https://www.instagram.com/icem_acm?utm_source=qr&stkn=MWUxZTY0eWVjN3VtNg=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs text-pink-600 font-semibold hover:text-pink-700 transition"
+                >
+                  <span>Follow @icem_acm on Instagram ↗</span>
                 </a>
               </li>
             </ul>

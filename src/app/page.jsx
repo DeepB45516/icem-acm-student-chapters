@@ -8,6 +8,11 @@ import {
   ExternalLink, Mail, Phone, MapPin, CheckCircle2,
   Terminal, Cpu, ArrowRight, Flame, Clock, Check, Award, Sparkles
 } from "lucide-react";
+import heroCodingImg from "../../public/assets/images/icem-acm-hero-coding.png";
+import campusBuildingImg from "../../public/assets/images/icem-campus-building.png";
+import labSessionImg from "../../public/assets/images/icem-acm-lab-session.png";
+import indiraLogoImg from "../../public/assets/images/indira-college-logo.png";
+import acmIcemLogoImg from "../../public/assets/images/acm-icem-logo.png";
 
 export default function HomePage() {
   const [rsvpStatus, setRsvpStatus] = useState({});
@@ -79,11 +84,11 @@ export default function HomePage() {
           <div className="lg:col-span-5">
             <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 aspect-[4/3.8] sm:aspect-[4/3.5] lg:aspect-[4/4.2] max-w-lg mx-auto w-full">
               <Image
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop"
-                alt="Students collaborating around a laptop during a hackathon"
+                src={heroCodingImg}
+                alt="ICEM ACM students collaborating in the computer lab"
                 fill
                 className="object-cover"
-                unoptimized
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#003c84]/80 via-[#003c84]/20 to-transparent" />
               
@@ -94,6 +99,48 @@ export default function HomePage() {
                   events run<br />since founding
                 </span>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== INSTITUTIONAL AFFILIATION & ACCREDITATIONS BANNER ==================== */}
+      <section className="bg-white py-6 border-b border-slate-200 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto bg-slate-50/80 border border-slate-200 rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xs">
+          <div className="flex items-center gap-4 flex-shrink-0">
+            <div className="h-14 w-28 sm:h-16 sm:w-36 relative flex items-center justify-center p-2 bg-white rounded-xl border border-slate-200">
+              <Image src={indiraLogoImg} alt="Indira College of Engineering & Management" className="object-contain max-h-full" priority />
+            </div>
+            <span className="text-slate-400 font-bold text-lg">&times;</span>
+            <div className="h-14 w-28 sm:h-16 sm:w-36 relative flex items-center justify-center p-2 bg-white rounded-xl border border-slate-200">
+              <Image src={acmIcemLogoImg} alt="ACM ICEM Student Chapter" className="object-contain max-h-full" priority />
+            </div>
+          </div>
+
+          <div className="flex-1 text-center lg:text-left space-y-1.5">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold text-[#003c84] bg-blue-100/70 border border-blue-200">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#003c84]" /> Official Academic Charter
+            </span>
+            <h3 className="text-lg sm:text-xl font-bold text-[#003c84]">
+              Department of Artificial Intelligence &amp; Data Science
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+              Chartered under the global Association for Computing Machinery (ACM) at Indira College of Engineering and Management (ICEM), Pune. Approved by AICTE, New Delhi &amp; Affiliated to Savitribai Phule Pune University (SPPU).
+            </p>
+          </div>
+
+          <div className="grid grid-cols-3 gap-3 flex-shrink-0 w-full lg:w-auto">
+            <div className="bg-white p-3 rounded-xl border border-slate-200 text-center">
+              <b className="block text-xs sm:text-sm font-bold text-slate-900">SPPU Pune</b>
+              <span className="text-[10px] text-slate-500 font-medium">Affiliated Univ.</span>
+            </div>
+            <div className="bg-white p-3 rounded-xl border border-slate-200 text-center">
+              <b className="block text-xs sm:text-sm font-bold text-slate-900">AICTE</b>
+              <span className="text-[10px] text-slate-500 font-medium">Govt. Approved</span>
+            </div>
+            <div className="bg-white p-3 rounded-xl border border-slate-200 text-center">
+              <b className="block text-xs sm:text-sm font-bold text-[#003c84]">ACM Global</b>
+              <span className="text-[10px] text-slate-500 font-medium">Chartered 2026</span>
             </div>
           </div>
         </div>
@@ -171,20 +218,18 @@ export default function HomePage() {
           <div className="lg:col-span-6 relative pb-10 sm:pb-12">
             <div className="w-[82%] rounded-2xl overflow-hidden shadow-lg border border-slate-200 aspect-[5/4.5] relative">
               <Image
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop"
-                alt="Chapter members working together at a workshop"
+                src={campusBuildingImg}
+                alt="Indira College of Engineering and Management campus building"
                 fill
                 className="object-cover"
-                unoptimized
               />
             </div>
             <div className="absolute right-0 bottom-0 w-[58%] rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] bg-white">
               <Image
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=700&auto=format&fit=crop"
-                alt="Close-up of code on a laptop screen"
+                src={labSessionImg}
+                alt="ICEM ACM students attending a computer networking lab session"
                 fill
                 className="object-cover"
-                unoptimized
               />
             </div>
           </div>
@@ -564,13 +609,13 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Student 4: Web-Master */}
+            {/* Student 4: Webmaster */}
             <div className="bg-[#f8fafc] rounded-xl border border-slate-200 p-6 text-center shadow-xs hover:-translate-y-1 transition-all duration-200">
               <div className="w-16 h-16 rounded-2xl bg-slate-200 text-[#003c84] font-bold text-xl flex items-center justify-center mx-auto mb-4">
-                BD
+                DB
               </div>
-              <h3 className="text-base font-bold text-[#003c84]">Biswas Deep</h3>
-              <p className="text-xs font-bold text-[#278da4] uppercase tracking-wide my-1">Web - Master</p>
+              <h3 className="text-base font-bold text-[#003c84]">Deep Biswas</h3>
+              <p className="text-xs font-bold text-[#278da4] uppercase tracking-wide my-1">Webmaster</p>
               <p className="text-xs text-slate-600 leading-relaxed mt-2 font-normal">
                 Directing web development, registration portals, GitHub repositories, and tech infrastructure.
               </p>
