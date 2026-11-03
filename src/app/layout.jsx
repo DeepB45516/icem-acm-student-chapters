@@ -18,25 +18,34 @@ const inter = Inter({
   display: "swap",
 });
 
+const isVercel =
+  process.env.VERCEL === "1" || Boolean(process.env.NEXT_PUBLIC_VERCEL_ENV);
+const basePath = isVercel
+  ? ""
+  : process.env.NEXT_PUBLIC_BASE_PATH || "/icem-acm";
+
 export const metadata = {
   title: "ICEM ACM Student Chapter | Department of AI & Data Science",
-  description: "Official portal of the ICEM ACM Student Chapter, Department of AI & Data Science, Indira College of Engineering and Management (ICEM), Pune.",
+  description:
+    "Official portal of the ICEM ACM Student Chapter, Department of AI & Data Science, Indira College of Engineering and Management (ICEM), Pune.",
   icons: {
-    icon: "/icem-acm/shortLogo.png",
-    shortcut: "/icem-acm/shortLogo.png",
-    apple: "/icem-acm/shortLogo.png",
+    icon: `${basePath}/shortLogo.png`,
+    shortcut: `${basePath}/shortLogo.png`,
+    apple: `${basePath}/shortLogo.png`,
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`} suppressHydrationWarning>
-      <head>
-        <link rel="icon" type="image/png" href="/icem-acm/shortLogo.png" />
-        <link rel="shortcut icon" href="/icem-acm/shortLogo.png" />
-        <link rel="apple-touch-icon" href="/icem-acm/shortLogo.png" />
-      </head>
-      <body className="flex flex-col min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-[#003c84] selection:text-white" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${inter.variable}`}
+      suppressHydrationWarning
+    >
+      <body
+        className="flex flex-col min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-[#003c84] selection:text-white"
+        suppressHydrationWarning
+      >
         <Navbar />
         <PageLoadingWatcher />
         <main className="flex-1">{children}</main>

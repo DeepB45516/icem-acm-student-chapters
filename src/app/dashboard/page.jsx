@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { resolvePath } from "@/utils/paths";
 import {
   LayoutDashboard,
   ScrollText,
@@ -295,6 +297,7 @@ const treasuryVouchers = [
 ];
 
 export default function DashboardPage() {
+  const router = useRouter();
   const [session, setSession] = useState({
     name: "Student Member",
     email: "student@indiraicem.ac.in",
@@ -509,7 +512,11 @@ export default function DashboardPage() {
       localStorage.removeItem("acm_user");
       sessionStorage.removeItem("acm_user");
     } catch (e) {}
-    window.location.href = "/login";
+    if (router && typeof router.push === "function") {
+      router.push("/login");
+    } else {
+      window.location.href = resolvePath("/login/");
+    }
   };
 
   const isMemberRole = session.role === "member";
